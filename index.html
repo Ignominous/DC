@@ -40,9 +40,16 @@
     <script>
         // Set your initial date (April 1, 2024)
         const initialDate = new Date('2024-04-01');
+        const currentDate = new Date();
 
-        // Display the initial date (only the date)
-        document.getElementById('daysCounter').textContent = initialDate.toDateString();
+        // Calculate the difference in milliseconds
+        const timeDifference = currentDate - initialDate;
+
+        // Convert milliseconds to days
+        const daysElapsed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+        // Display the number of days
+        document.getElementById('daysCounter').textContent = daysElapsed;
     </script>
 </body>
 </html>
