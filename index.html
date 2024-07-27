@@ -3,30 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900">
     <style>
         body {
             background-color: pink;
             font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            font-family: 'Lato', sans-serif;
+        }
+
+        #daysCounter {
+            font-size: 3em;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #daysText {
+            font-size: 1.5em;
+            color: red;
+            margin-top: 10px;
+            font-family: 'Lato', sans-serif;
         }
     </style>
     <title>Days Counter</title>
 </head>
 <body>
-    <p id="daysCounter"></p>
+    <div>
+        <p id="daysCounter"></p>
+        <p id="daysText">days in love</p>
+    </div>
 
     <script>
-        // Set your initial date (e.g., January 1, 2020)
-        const initialDate = new Date('2020-01-01');
-        const currentDate = new Date();
+        // Set your initial date (April 1, 2024)
+        const initialDate = new Date('2024-04-01');
 
-        // Calculate the difference in milliseconds
-        const timeDifference = currentDate - initialDate;
-
-        // Convert milliseconds to days
-        const daysElapsed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-        // Display the result (only the date)
-        document.getElementById('daysCounter').textContent = `Days since ${initialDate.toDateString()}: ${daysElapsed}`;
+        // Display the initial date (only the date)
+        document.getElementById('daysCounter').textContent = initialDate.toDateString();
     </script>
 </body>
 </html>
